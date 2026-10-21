@@ -1,0 +1,28 @@
+
+  server:
+    port: 8084
+
+  spring:
+    application:
+      name: notification-service1
+
+    datasource:
+      url: jdbc:mysql://localhost:3306/notification_service
+      username: root
+      password: watson@123
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+
+    kafka:
+      bootstrap-servers: localhost:9092
+      consumer:
+        group-id: notification-service1-group
+        auto-offset-reset: earliest
+
